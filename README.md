@@ -18,7 +18,6 @@ In order to run this repo you need to create a file called **default.json** insi
 ## INDEX
 
 - [API Documentation](#api-documentation)
-
   - [Introduction](#introduction)
   - [Registering new user](#registering-a-user)
     - [API Answer on success](#api-answer-on-success)
