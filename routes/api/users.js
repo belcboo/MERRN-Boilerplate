@@ -8,7 +8,7 @@ const config = require("config");
 // DB to utilize with this route
 const db = require("../../models");
 
-//@route    POST api/users
+//@route    POST api/users/new
 //@desc     New user creation
 //@access   Public
 router.post(
