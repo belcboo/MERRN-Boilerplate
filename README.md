@@ -18,11 +18,16 @@ In order to run this repo you need to create a file called **default.json** insi
 ## INDEX
 
 - [API Documentation](#api-documentation)
+
   - [Introduction](#introduction)
   - [Registering new user](#registering-a-user)
     - [API Answer on success](#api-answer-on-success)
     - [API Answer on wrong inputs](#api-answer-on-wrong-inputs)
     - [API Answer on duplicated user](#api-answer-on-duplicated-user)
+    - [API Answer in server/other errors](#api-answer-on-system-errors)
+  - [User Authentication](#user-authentication)
+    - [API authentication success](#api-authentication-success)
+    - [API authentication failed](#api-authentication-failed)
     - [API Answer in server/other errors](#api-answer-on-system-errors)
 
 # API Documentation
@@ -104,6 +109,60 @@ The API check if an email is already registered, if that's positive you will rec
   "errors": [
     {
       "msg": "User already exists"
+    }
+  ]
+}
+```
+
+### API answer on system errors:
+
+- Return status: 500 Internal Server Error
+- JSON Response example:
+
+```
+Server Error
+```
+
+## User authentication
+
+- Route: api/auth
+- Route type: POST
+- Description: Authenticate users and provides token.
+- Access: Public
+- Expecting Object:
+
+```json
+{
+  "email": "test@test.com",
+  "password": "12345678"
+}
+```
+
+### API authentication success:
+
+If the user and password are successfully validated you should receive an object containing the token.
+
+- Return status: 200 Ok
+- JSON Response example:
+
+```json
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWNmNzQ4NGU5YThhZmYwYzQ1MjA2NTRiIiwicm9sZSI6IlVzZXIifSwiaWF0IjoxNTU5NzA5Nzc0LCJleHAiOjE1NjAwNjk3NzR9.bEpQsT-BkjAKFu_QJ2tMPDTBJ6bRUcEHH1c_A2xGPmo"
+}
+```
+
+### API authentication failed:
+
+If the user or password provided don't match you will receive the following error:
+
+- Return status: 400 Bad Request
+- JSON Response example:
+
+```json
+{
+  "errors": [
+    {
+      "msg": "Invalid credentials"
     }
   ]
 }
