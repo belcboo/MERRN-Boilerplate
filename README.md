@@ -1,6 +1,6 @@
 # MERRN-Boilerplate
 
-A boilerplate for MERRN [Mongo, Express. React, Redux, Node].
+A boilerplate for MERRN [Mongo, Express, React, Redux, Node].
 
 ##### NOTE: You should be able to use the backend in this repo with any other JS Framework, the only thing you need to do is eliminte the client folder and then use the endpoints in the API detailed below to point your choosed JS Framework.
 
@@ -22,18 +22,19 @@ In order to run this repo you need to create a file called **default.json** insi
   - [Registering new user](#registering-a-user)
     - [API Answer on success](#api-answer-on-success)
     - [API Answer on wrong inputs](#api-answer-on-wrong-inputs)
-    - [API Answer on duplicated user]()
+    - [API Answer on duplicated user](#api-answer-on-duplicated-user)
+    - [API Answer in server/other errors](#api-answer-on-system-errors)
 
 # API Documentation
 
 ## Introduction
 
-This API allows you to have a prebuilt app that uses JWT to register and generate tokens for the login of the users. The goal is to have a simple and quick way to start a MERN project, for that reason this API also has all the configuration for Node, Express Mongo and React.
+This API allows you to have a prebuilt app that uses JWT to register and generate tokens for the login of the users. The goal is to have a simple and quick way to start a MERN project, for that reason this API also has all the configuration for Node, Express, Mongo and React.
 
 ## Registering a user:
 
 - Route: api/users/new
-- Route Type: POST
+- Route type: POST
 - Description: New user creation
 - Access: Public
 - Expenting Object:
@@ -48,7 +49,7 @@ This API allows you to have a prebuilt app that uses JWT to register and generat
 
 ### API answer on success:
 
-On success you're gonna receive a token, the goal is to use this token to authenticate the user that you just registered.
+On success you're gonna receive a token,you can use this token to authenticate the user that you just registered.
 
 - Return status: 200 Ok
 - JSON Response example:
@@ -108,7 +109,7 @@ The API check if an email is already registered, if that's positive you will rec
 }
 ```
 
-### API answer on system erros:
+### API answer on system errors:
 
 - Return status: 500 Internal Server Error
 - JSON Response example:
